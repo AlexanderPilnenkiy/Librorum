@@ -14,7 +14,7 @@ namespace Librorum.Source.ViewModel
 
         public void GetBooksList(BooksInCategory booksInCategory, string Path)
         {
-            int i = 0, j = 0, c = 0, d = 0;
+            int author = 0, title = 0, pages = 0, description = 0;
 
             GetImageManager getImageManager = new GetImageManager();
             getImageManager.DownLoadFileInBackground2(Path);
@@ -22,9 +22,9 @@ namespace Librorum.Source.ViewModel
 
             for (int q = 0; q < GetImageManager.Author.Count; q++)
             {
-                if (GetImageManager.Author[i].Contains("Серия"))
+                if (GetImageManager.Author[author].Contains("Серия"))
                 {
-                    GetImageManager.Author.RemoveAt(i);
+                    GetImageManager.Author.RemoveAt(author);
                 }
             }
 
@@ -34,10 +34,10 @@ namespace Librorum.Source.ViewModel
                 {
                     Book.Add(new BookPreview()
                     {
-                        Title = GetImageManager.Name[j],
-                        Author = GetImageManager.Author[i],
-                        Pages = GetImageManager.Pages[c],
-                        Description = GetImageManager.Description[d],
+                        Title = GetImageManager.Name[title],
+                        Author = GetImageManager.Author[author],
+                        Pages = GetImageManager.Pages[pages],
+                        Description = GetImageManager.Description[description],
                         ImagePath = ImageUri.ToString()
                     });
                 }
@@ -45,17 +45,17 @@ namespace Librorum.Source.ViewModel
                 {
                     Book.Add(new BookPreview()
                     {
-                        Title = GetImageManager.Name[j],
-                        Author = GetImageManager.Author[i],
+                        Title = GetImageManager.Name[title],
+                        Author = GetImageManager.Author[author],
                         Pages = "-//-",
-                        Description = GetImageManager.Description[d],
+                        Description = GetImageManager.Description[description],
                         ImagePath = ImageUri.ToString()
                     });
                 }
-                j++;
-                i++;
-                c++;
-                d++;
+                title++;
+                author++;
+                pages++;
+                description++;
             }
 
             ListView listView = new ListView

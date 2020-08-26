@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Librorum.Views.CatalogTree.BookInfo">
-    <ContentPage.Content>
+    <ScrollView>
         <StackLayout>
             <StackLayout x:Name="infoContainer" Spacing="8" Orientation="Horizontal">
                 <Image x:Name="iImage" HeightRequest="250" WidthRequest="140"
@@ -20,9 +20,21 @@
                 </StackLayout>
             </StackLayout>
             <RelativeLayout>
-                <Label Text="Описание:" Margin="15, 15, 15, 15" TextColor="Red" />
-                <Label x:Name="lDescription" Margin="15, 55, 15, 15"></Label>
+                <Label Text="Описание:" Margin="15, 0, 15, 15" TextColor="Red" />
+                <Label x:Name="lDescription" Margin="15, 25, 15, 15"></Label>
             </RelativeLayout>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Margin="15, 0, 0, 0" Text="Сохранить"></Button>
+                <Button Grid.Column="1" Margin="0, 0, 15, 0" Text="Читать"></Button>
+            </Grid>
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

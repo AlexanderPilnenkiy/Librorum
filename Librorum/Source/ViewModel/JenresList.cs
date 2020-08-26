@@ -13,7 +13,14 @@ namespace Librorum.Source.ViewModel
 
         public void LoadList(Catalog catalog)
         {
-            catalog.catalogList.ItemsSource = getInfoManager.Info(SearchList.WayToData[0], Source.Configs.Connection.Library).Keys;
+            try
+            {
+                catalog.catalogList.ItemsSource = getInfoManager.Info(SearchList.WayToData[0], Source.Configs.Connection.Library).Keys;
+            }
+            catch 
+            { 
+                //TODO Connection Error Event
+            }
         }
 
         public async void ChooseJenre(Catalog catalog, string CurrentJenre)
