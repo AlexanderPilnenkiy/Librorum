@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Librorum.Pages.Main.Catalog"
+             Title="Каталог">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Категории" HorizontalOptions="Center" FontSize="Large" 
+                   Margin="15"/>
+            <ListView x:Name="catalogList" ItemsSource="{Binding}" x:FieldModifier="public"
+                  MinimumHeightRequest="35" BackgroundColor="#FFFFFF" ItemSelected="catalogList_ItemSelected"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Librorum.Views.CatalogTree.BookInfo">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="infoContainer" Spacing="8" Orientation="Horizontal">
+                <Image x:Name="iImage" HeightRequest="250" WidthRequest="140"
+                   Margin="15, 10, 0, 0"></Image>
+                <StackLayout x:Name="descrContainer" Spacing="8" Orientation="Vertical">
+                    <Label Text="Название:" Margin="10, 35, 7, 0" TextColor="Red"/>
+                    <Label x:Name="lTitle" TextDecorations="Underline" Margin="10, 5, 7, 0" TextColor="Black"/>
+                    <Label Text="Автор:" Margin="10, 15, 7, 0" TextColor="Red" />
+                    <Label x:Name="lAuthor" TextDecorations="Underline" Margin="10, 5, 7, 0" TextColor="Black"/>
+                    <Label Text="Страниц:" Margin="10, 15, 7, 0" TextColor="Red" />
+                    <Label x:Name="lPages" TextDecorations="Underline" Margin="10, 5, 7, 0" TextColor="Black"/>
+                </StackLayout>
+            </StackLayout>
+            <RelativeLayout>
+                <Label x:Name="lDescription" Margin="15, 15, 15, 15"></Label>
+            </RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

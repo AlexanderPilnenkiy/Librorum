@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "nvRvvhGBqb9kUqDiRUL9Ee5RQbQMXwC0MP/OXqPiTPL0irTsHzuhQfTOpcT5sXi2PGoYYoSqjozg0tQ9eW8Zig==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Librorum\\Librorum\\Librorum\\Librorum.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\htmlagilitypack\\1.11.24\\htmlagilitypack.1.11.24.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\xamarin.forms\\4.7.0.1179\\xamarin.forms.4.7.0.1179.nupkg.sha512"
+  ],
+  "logs": []
+}
