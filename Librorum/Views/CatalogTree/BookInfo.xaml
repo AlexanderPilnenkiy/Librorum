@@ -20,7 +20,8 @@
                 </StackLayout>
             </StackLayout>
             <RelativeLayout>
-                <Label x:Name="lDescription" Margin="15, 15, 15, 15"></Label>
+                <Label Text="Описание:" Margin="15, 15, 15, 15" TextColor="Red" />
+                <Label x:Name="lDescription" Margin="15, 55, 15, 15"></Label>
             </RelativeLayout>
         </StackLayout>
     </ContentPage.Content>

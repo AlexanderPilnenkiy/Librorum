@@ -16,6 +16,7 @@ namespace Librorum.Source.Parser
         public static List<string> Name = new List<string>();
         public static List<string> Author = new List<string>();
         public static List<string> Pages = new List<string>();
+        public static List<string> Description = new List<string>();
 
         public void DownLoadFileInBackground2(string Path)
         {
@@ -23,6 +24,7 @@ namespace Librorum.Source.Parser
             Name.Clear();
             Author.Clear();
             Pages.Clear();
+            Description.Clear();
             LoadCurrentPage loadCurrentPage = new LoadCurrentPage();
             string Way = "http://loveread.ec/" + Path + "/";
             var pageContent = loadCurrentPage.LoadPage(Way);
@@ -32,6 +34,7 @@ namespace Librorum.Source.Parser
             HtmlNodeCollection ImageLink = document.DocumentNode.SelectNodes(".//p/a/img");
             HtmlNodeCollection NameLink = document.DocumentNode.SelectNodes(".//tr/td/p/a/img");
             HtmlNodeCollection AuthorLink = document.DocumentNode.SelectNodes(".//tr[@class='td_center_color']/td[@class='span_str']/p/a[strong]");
+            HtmlNodeCollection DescriptionLink = document.DocumentNode.SelectNodes("//tr[3]/td/p");
             foreach (HtmlNode link in ImageLink)
             {
                 Images.Add(new Uri("http://loveread.ec/" + link.GetAttributeValue("src", "")));
@@ -43,6 +46,10 @@ namespace Librorum.Source.Parser
             foreach (HtmlNode link in AuthorLink)
             {
                 Author.Add(link.GetAttributeValue("title", ""));
+            }
+            foreach (HtmlNode link in DescriptionLink)
+            {
+                Description.Add(link.InnerText.Trim());
             }
             HtmlNode PagesLink = document.DocumentNode.SelectSingleNode("//td[@class='span_str']");
             HtmlNodeCollection PagesLinkCollection = PagesLink.SelectNodes("//span//following-sibling::text()[8]");

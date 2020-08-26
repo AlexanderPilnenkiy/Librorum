@@ -14,7 +14,7 @@ namespace Librorum.Source.ViewModel
 
         public void GetBooksList(BooksInCategory booksInCategory, string Path)
         {
-            int i = 0, j = 0, c = 0;
+            int i = 0, j = 0, c = 0, d = 0;
 
             GetImageManager getImageManager = new GetImageManager();
             getImageManager.DownLoadFileInBackground2(Path);
@@ -28,8 +28,6 @@ namespace Librorum.Source.ViewModel
                 }
             }
 
-            string CountOfPages;
-
             foreach (Uri ImageUri in GetImageManager.Images)
             {
                 try
@@ -39,7 +37,7 @@ namespace Librorum.Source.ViewModel
                         Title = GetImageManager.Name[j],
                         Author = GetImageManager.Author[i],
                         Pages = GetImageManager.Pages[c],
-                        Description = "",
+                        Description = GetImageManager.Description[d],
                         ImagePath = ImageUri.ToString()
                     });
                 }
@@ -50,13 +48,14 @@ namespace Librorum.Source.ViewModel
                         Title = GetImageManager.Name[j],
                         Author = GetImageManager.Author[i],
                         Pages = "-//-",
-                        Description = "",
+                        Description = GetImageManager.Description[d],
                         ImagePath = ImageUri.ToString()
                     });
                 }
                 j++;
                 i++;
                 c++;
+                d++;
             }
 
             ListView listView = new ListView
