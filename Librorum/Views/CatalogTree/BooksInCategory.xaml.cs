@@ -24,9 +24,17 @@ namespace Librorum.Views.CatalogTree
 
         public BooksInCategory(string Name, string Path)
         {
-            Title = "Книги в жанре " + Name;
-            BooksInJenre booksInJenre = new BooksInJenre();
-            booksInJenre.GetBooksList(this, Path);
+            try
+            {
+                Title = "Книги в жанре " + Name;
+                BooksInJenre booksInJenre = new BooksInJenre();
+                booksInJenre.GetBooksList(this, Path);
+            }
+            catch
+            {
+                DisplayAlert("Ошибка подключения", "Каталог библиотеки недоступен без подключения к сети. " +
+                    "Доступна только сохранённая библиотека", "ОK");
+            }
         }
 
         public async void SelectBook(object sender, SelectedItemChangedEventArgs e)

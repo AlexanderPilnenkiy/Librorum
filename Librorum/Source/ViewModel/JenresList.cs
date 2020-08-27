@@ -4,6 +4,7 @@ using Librorum.Views.CatalogTree;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Librorum.Source.ViewModel
 {
@@ -18,8 +19,10 @@ namespace Librorum.Source.ViewModel
                 catalog.catalogList.ItemsSource = getInfoManager.Info(SearchList.WayToData[0], Source.Configs.Connection.Library).Keys;
             }
             catch 
-            { 
+            {
                 //TODO Connection Error Event
+                catalog.DisplayAlert("Ошибка подключения", "Каталог библиотеки недоступен без подключения к сети. " +
+                    "Доступна только сохранённая библиотека", "ОK");
             }
         }
 
