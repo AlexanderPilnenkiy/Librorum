@@ -32,8 +32,10 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Margin="15, 0, 0, 0" Text="Сохранить"></Button>
-                <Button Grid.Column="1" Margin="0, 0, 15, 0" Text="Читать"></Button>
+                <Button Grid.Column="0" Margin="15, 0, 0, 0" Text="Сохранить" BorderColor="#FF0000" 
+                        BorderWidth="3" CornerRadius="15" BackgroundColor="#FFFFFF"></Button>
+                <Button Grid.Column="1" Margin="0, 0, 15, 0" Text="Читать" BorderColor="#FF0000" 
+                        BorderWidth="3" CornerRadius="15" BackgroundColor="#FFFFFF"></Button>
             </Grid>
         </StackLayout>
     </ScrollView>

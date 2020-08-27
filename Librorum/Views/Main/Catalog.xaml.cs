@@ -37,5 +37,10 @@ namespace Librorum.Pages.Main
             }
             jenresList.ChooseJenre(this, CurrentJenre);
         }
+
+        private void bConnect_Clicked(object sender, EventArgs e)
+        {
+            jenresList.LoadList(this);
+        }
     }
 }

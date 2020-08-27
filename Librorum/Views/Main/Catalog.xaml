@@ -12,6 +12,18 @@
                    Margin="15"/>
             <ListView x:Name="catalogList" ItemsSource="{Binding}" x:FieldModifier="public"
                   MinimumHeightRequest="35" BackgroundColor="#FFFFFF" ItemSelected="catalogList_ItemSelected"/>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="bConnect" Clicked="bConnect_Clicked" Grid.Column="0" Margin="50" 
+                        Text="Подключиться" BorderColor="#FF0000" BorderWidth="3" 
+                        CornerRadius="15" BackgroundColor="#FFFFFF" IsVisible="False" 
+                        x:FieldModifier="public"></Button>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

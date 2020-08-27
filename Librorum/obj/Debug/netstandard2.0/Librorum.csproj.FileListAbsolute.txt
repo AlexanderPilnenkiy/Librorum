@@ -2,7 +2,6 @@ C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\bin\Debug\netstandard2.0\Libro
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\bin\Debug\netstandard2.0\Librorum.dll
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\bin\Debug\netstandard2.0\ref\Librorum.dll
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\bin\Debug\netstandard2.0\Librorum.pdb
-C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\Librorum.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\Librorum.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\Librorum.AssemblyInfo.cs

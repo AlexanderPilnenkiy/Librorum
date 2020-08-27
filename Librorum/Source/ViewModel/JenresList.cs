@@ -17,12 +17,14 @@ namespace Librorum.Source.ViewModel
             try
             {
                 catalog.catalogList.ItemsSource = getInfoManager.Info(SearchList.WayToData[0], Source.Configs.Connection.Library).Keys;
+                catalog.bConnect.IsVisible = false;
             }
             catch 
             {
                 //TODO Connection Error Event
                 catalog.DisplayAlert("Ошибка подключения", "Каталог библиотеки недоступен без подключения к сети. " +
                     "Доступна только сохранённая библиотека", "ОK");
+                catalog.bConnect.IsVisible = true;
             }
         }
 
