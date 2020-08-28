@@ -50,5 +50,17 @@ namespace Librorum.Views.CatalogTree
                 await Navigation.PushAsync(new BookInfo(BookTitle, Author, ImagePath, Pages, Description));
             }
         }
+
+        public void ClickedForwardButton(object sender, EventArgs e)
+        {
+            BooksInJenre booksInJenre = new BooksInJenre();
+            booksInJenre.GetBooksList(this, GetImageManager.GoForward());
+        }
+
+        public void ClickedBackButton(object sender, EventArgs e)
+        {
+            BooksInJenre booksInJenre = new BooksInJenre();
+            booksInJenre.GetBooksList(this, GetImageManager.GoBack());
+        }
     }
 }

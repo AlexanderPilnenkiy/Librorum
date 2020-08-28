@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Markup;
 
 namespace Librorum.Source.ViewModel
 {
@@ -16,8 +17,7 @@ namespace Librorum.Source.ViewModel
         {
             int author = 0, title = 0, pages = 0, description = 0;
 
-            GetImageManager getImageManager = new GetImageManager();
-            getImageManager.DownLoadFileInBackground2(Path);
+            GetImageManager.DownLoadFileInBackground2(Path);
             Book = new List<BookPreview>();
 
             for (int q = 0; q < GetImageManager.Author.Count; q++)
@@ -74,7 +74,34 @@ namespace Librorum.Source.ViewModel
                 })
             };
             listView.ItemSelected += booksInCategory.SelectBook;
-            booksInCategory.Content = new StackLayout { Children = { listView }, Margin = new Thickness(0, 10, 0, 0) };
+
+            Button bNavigationForward = new Button
+            {
+                Text = "Вперёд",
+                BorderColor = Color.Red,
+                BorderWidth = 3,
+                CornerRadius = 15,
+                BackgroundColor = Color.White
+            };
+            bNavigationForward.Clicked += booksInCategory.ClickedForwardButton;
+
+            Button bNavigationBack = new Button
+            {
+                Text = "Назад",
+                BorderColor = Color.Red,
+                BorderWidth = 3,
+                CornerRadius = 15,
+                BackgroundColor = Color.White,
+            };
+            bNavigationBack.Clicked += booksInCategory.ClickedBackButton;
+
+            Grid grid = new Grid();
+            grid.Children.Add(bNavigationBack);
+            grid.Children.Add(bNavigationForward);
+            Grid.SetColumn(bNavigationBack, 0);
+            Grid.SetColumn(bNavigationForward, 1);
+
+            booksInCategory.Content = new StackLayout { Children = { listView, grid }, Margin = new Thickness(0, 10, 0, 0) };
         }
     }
 }

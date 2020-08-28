@@ -23,3 +23,4 @@ C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\Libro
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\Views\CatalogTree\BooksInCategory.xaml.g.cs
 C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\Views\CatalogTree\BookInfo.xaml.g.cs
+C:\Users\Admin\Desktop\Librorum\Librorum\Librorum\obj\Debug\netstandard2.0\Librorum.csprojAssemblyReference.cache

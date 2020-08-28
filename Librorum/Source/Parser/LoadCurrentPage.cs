@@ -12,23 +12,30 @@ namespace Librorum.Source.Parser
         public string LoadPage(string url)
         {
             var result = "";
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            var response = (HttpWebResponse)request.GetResponse();
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            try
             {
-                var receiveStream = response.GetResponseStream();
-                if (receiveStream != null)
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                var response = (HttpWebResponse)request.GetResponse();
+
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    StreamReader readStream;
-                    if (response.CharacterSet == null)
-                        readStream = new StreamReader(receiveStream);
-                    else
-                        readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
-                    result = readStream.ReadToEnd();
-                    readStream.Close();
+                    var receiveStream = response.GetResponseStream();
+                    if (receiveStream != null)
+                    {
+                        StreamReader readStream;
+                        if (response.CharacterSet == null)
+                            readStream = new StreamReader(receiveStream);
+                        else
+                            readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
+                        result = readStream.ReadToEnd();
+                        readStream.Close();
+                    }
+                    response.Close();
                 }
-                response.Close();
+            }
+            catch
+            {
+
             }
             return result;
         }

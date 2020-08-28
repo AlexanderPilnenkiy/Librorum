@@ -21,7 +21,6 @@ namespace Librorum.Source.ViewModel
             }
             catch 
             {
-                //TODO Connection Error Event
                 catalog.DisplayAlert("Ошибка подключения", "Каталог библиотеки недоступен без подключения к сети. " +
                     "Доступна только сохранённая библиотека", "ОK");
                 catalog.bConnect.IsVisible = true;
